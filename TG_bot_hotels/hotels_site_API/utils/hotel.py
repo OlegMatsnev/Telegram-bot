@@ -128,6 +128,15 @@ class Hotel:
     def id(self, value):
         self._id = value
 
+    def __getitem__(self, index):
+        attributes = [
+            self._name, self._is_available, self._min_rooms_left,
+            self._picture_url, self._price_per_night, self._total_price,
+            self._reviews_count, self._reviews_score, self._destination_info,
+            self._id
+        ]
+        return attributes[index]
+
     def __str__(self):
 
         """
@@ -141,7 +150,7 @@ class Hotel:
             'Название отеля: {name}\n'
             'Свободен: {available};\t Минимальное количество комнат: {minRoom}\n'
             'Ссылка на картинку: {picture}\n'
-            'Цена на ночь: {price_per_night}\n'
+            'Цена за ночь: {price_per_night}\n'
             'Общая цена (including taxes & fees) {total_price}\n'
             'Отзывов: {reviews}\n'
             'Оценка: {score}\n'
