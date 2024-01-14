@@ -1,0 +1,9 @@
+pages:
+  script:
+    - mkdir .public
+    - cp TG_bot_hotels/telegram/index.html .public
+  artifacts:
+    paths:
+      - .public
+  only:
+    - api-working-branch
